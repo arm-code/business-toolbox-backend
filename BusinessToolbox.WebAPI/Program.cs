@@ -50,7 +50,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins(
+                "http://localhost:3000",
+                "https://business-toolbox.yosoyalexisromero.site"
+              )
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
