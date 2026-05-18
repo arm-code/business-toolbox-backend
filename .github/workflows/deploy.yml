@@ -28,4 +28,4 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1 
         run: |
           cd BusinessToolbox.WebAPI
-          dotnet lambda deploy-function MiBusinessToolboxAPI
+          dotnet lambda deploy-function MiBusinessToolboxAPI --region us-east-1
