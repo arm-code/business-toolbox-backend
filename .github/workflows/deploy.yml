@@ -1,0 +1,31 @@
+name: Deploy to AWS Lambda
+
+on:
+  push:
+    branches:
+      - main # Solo se ejecuta cuando subes código a la rama main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Instalar herramientas de AWS Lambda
+        run: dotnet tool install -g Amazon.Lambda.Tools
+
+      - name: Desplegar a AWS
+        env:
+          # Aquí GitHub inyecta los secretos que guardaste
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: us-east-1 
+        run: |
+          cd BusinessToolbox.WebAPI
+          dotnet lambda deploy-function MiBusinessToolboxAPI

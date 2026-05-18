@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BusinessToolbox.Application/BusinessToolbox.Application.csproj" />
+  <Project Path="BusinessToolbox.Domain/BusinessToolbox.Domain.csproj" />
+  <Project Path="BusinessToolbox.Infrastructure/BusinessToolbox.Infrastructure.csproj" />
+  <Project Path="BusinessToolbox.WebAPI/BusinessToolbox.WebAPI.csproj" />
+</Solution>
