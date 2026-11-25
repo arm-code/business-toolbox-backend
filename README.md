@@ -1,3 +1,5 @@
+> ⚠️ **Repositorio archivado.** Fue un experimento descartado (backend en .NET). El proyecto continúa en el monorepo [`arm-code/elchangarro`](https://github.com/arm-code/elchangarro), con un API propio en `apps/api`.
+
 # Business Toolbox Backend
 
 Este proyecto es el backend de la plataforma Business Toolbox, construido con **.NET 10** siguiendo los principios de **Clean Architecture**.
